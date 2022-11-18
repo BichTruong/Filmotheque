@@ -19,9 +19,9 @@ public class FilmServiceImpl implements FilmService{
 
 	@Override
 	public List<Film> creerJeuTest() {
-		Participant realisateur = new Participant(1,"Tim", "Burton");
-		Participant acteur = new Participant(2,"Johnny", "Depp");
-		Participant actrice = new Participant(3,"LN", "Bobonne");
+		Participant realisateur = new Participant(1,"Burton","Tim");
+		Participant acteur = new Participant(2,"Depp","Johnny");
+		Participant actrice = new Participant(3,"Bobonne","LN");
 		List<Participant> listeActeurs = new ArrayList<Participant>();
 		listeActeurs.add(actrice);
 		listeActeurs.add(acteur);
@@ -31,7 +31,7 @@ public class FilmServiceImpl implements FilmService{
 		Film film2 = new Film(2, "Alex Andrillon ",2000,50,".....",genre,realisateur,listeActeurs);
 		listeFilms.add(film1);
 		listeFilms.add(film2);
-		return null;
+		return listeFilms;
 	}
 
 

@@ -2,11 +2,46 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet"  href="/css/style.css">
 <title>Filmothèque</title>
 </head>
 <body>
+<div id="cotenu">
 <h1>Ecran détail</h1>
-<span th:text="${film.id}"></span>
-<span th:text="${film.titre}"></span>
+
+	<table>
+        <tr>
+            <th>Titre</th>
+            <td><span th:text="${film.titre}"/></td>
+        </tr>
+        <tr>
+            <th>Année</th>
+            <td><span th:text="${film.annee}"/></td>
+        </tr>
+        <tr>
+            <th>Durée (min)</th>
+            <td><span th:text="${film.duree}"/></td>
+        </tr>
+        <tr>
+            <th>Genre</th>
+            <td><span th:text="${film.genre.libelle}"/></td>
+        </tr>
+        <tr>
+            <th>Synopsis</th>
+            <td><span th:text="${film.synopsis}"/></td>
+        </tr>
+        <tr>
+            <th>Réalisateur</th>
+            <td><span th:text="${film.realisateur.prenom} + ' ' + ${film.realisateur.nom}"/></td>
+        </tr>
+        <tr>
+            <th>Acteurs</th>
+            <td><div th:each="acteur : ${film.ListeActeurs}">
+			    	<span style="white-space: pre-line" th:text="${acteur.prenom} + ' ' + ${acteur.nom}"></span>
+				</div>
+			</td>
+        </tr>
+        </table>
+</div>
 </body>
 </html>
