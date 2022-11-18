@@ -19,15 +19,20 @@ import fr.eni.Filmotheque.service.FilmService;
 @Controller
 @SessionAttributes("films")
 public class FilmController {
+	FilmService service;
+	
+	public FilmController(FilmService service) {
+		this.service=service;
+	}
 	@ModelAttribute("personnes")
 	public List<Film> getFilm(){
 		return new ArrayList<Film>();
 	}
 	
-	FilmService service;
+	
 	//@RequestMapping(method = RequestMethod.GET, value="/film-detail")	
-	@GetMapping({ "", "/film-detail"})
+	@GetMapping("/filmdetail")
 	public String afficherDetailFilm(Model modele) {
 		modele.addAttribute("film", service.creerJeuTest());
-		return "film-detail";}
+		return "filmdetail";}
 }

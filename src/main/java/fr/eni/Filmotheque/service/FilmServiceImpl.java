@@ -3,10 +3,12 @@ package fr.eni.Filmotheque.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import fr.eni.Filmotheque.bo.Film;
 import fr.eni.Filmotheque.bo.Genre;
 import fr.eni.Filmotheque.bo.Participant;
-
+@Service
 public class FilmServiceImpl implements FilmService{
 
 	@Override
